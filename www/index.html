@@ -3,71 +3,74 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
     <script src="components/loader.js"></script>
     <link rel="stylesheet" href="components/loader.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="keys.js"></script>
     <script>
-    // NCMB アクセスの準備
-    var ncmb = new NCMB(appKey, clientKey);
-    // 利用するデータベースを指定（存在しなければ生成）
-    var TestClass = ncmb.DataStore("RegisterTest");
-    // コールバックの登録など
-    $(function(){
-      $("#message").html("initialized");
-      $("#btnA").click(function(e){
-        btnAClick(e);
-      })
-      $("#btnB").click(function(e){
-        btnBClick(e);
-      })
-    });
+        // NCMB アクセスの準備
+        var ncmb = new NCMB(appKey, clientKey);
+        // 利用するデータベースを指定（存在しなければ生成）
+        var TestClass = ncmb.DataStore("RegisterTest");
+        // コールバックの登録など
+        $(function () {
+            $("#message").html("initialized");
+            $("#btnA").click(function (e) {
+                btnAClick(e);
+            })
+            $("#btnB").click(function (e) {
+                btnBClick(e);
+            })
+        });
 
-    function btnAClick(e) {
-      // 登録するレコードを用意
-      var testClass = new TestClass();
-      var key = $("#field").val();
-      var value = $("#value").val();
-      // レコードのフィールドと値を設定
-      testClass.set(key, value);
-      // レコードをデータベースに登録
-      testClass.save();
-      $("#message").html("btnA clicked !");
-    }
+        function btnAClick(e) {
+            // 登録するレコードを用意
+            var testClass = new TestClass();
+            var key = $("#field").val();
+            var value = $("#value").val();
+            // レコードのフィールドと値を設定
+            testClass.set(key, value);
+            // レコードをデータベースに登録
+            testClass.save();
+            $("#message").html("btnA clicked !");
+        }
 
-    function btnBClick(e) {
-      // 登録するレコードを用意
-      var testClass = new TestClass();
-      var key = $("#field").val();
-      var value = $("#value").val();
-      // レコードのフィールドと値を設定
-      testClass.set(key, value);
-      // レコードをデータベースに登録
-      testClass.save()
-      .then(function(m) {
-        $("#message").html("New object created with objectId: " + testClass.objectId);
-      })
-      .catch(function(err){
-        $("#message").html("Failed to create new object, with error code: " + JSON.stringify(err));
-      })
-    }
+        function btnBClick(e) {
+            // 登録するレコードを用意
+            var testClass = new TestClass();
+            var key = $("#field").val();
+            var value = $("#value").val();
+            // レコードのフィールドと値を設定
+            testClass.set(key, value);
+            // レコードをデータベースに登録
+            testClass.save()
+                .then(function (m) {
+                    $("#message").html("New object created with objectId: " + testClass.objectId);
+                })
+                .catch(function (err) {
+                    $("#message").html("Failed to create new object, with error code: " + JSON.stringify(err));
+                })
+        }
     </script>
 </head>
 <body>
-  <h1>Registration Sample</h1>
-  <div>
+<h1>Registration Sample</h1>
+<div>
     <label for="field">Field:</label>
     <input id="field" type="text" value="message">
-  </div>
-  <div>
+</div>
+<div>
     <label for="value">Value:</label>
     <input id="value" type="text" value="Hello, mBaaS!">
-  </div>
-  <div id="button">
+</div>
+<div id="button">
     <button id="btnA" class="btn">Regist 1</button>
     <button id="btnB" class="btn">Regist 2</button>
-  </div>
-  <div id="message"></div>
+    <button id="btnC" class="btn">Regist 2</button>
+    <button id="btnD" class="btn">Regist 2</button>
+</div>
+<div id="message"></div>
 </body>
 </html>
