@@ -45,23 +45,6 @@
 
         }
 
-        function btnBClick(e) {
-            // 登録するレコードを用意
-            var testClass = new TestClass();
-            var key = $("#field").val();
-            var value = $("#value").val();
-            // レコードのフィールドと値を設定
-            testClass.set(key, value);
-            // レコードをデータベースに登録
-            testClass.save()
-                .then(function (m) {
-                    $("#message").html("New object created with objectId: " + testClass.objectId);
-                })
-                .catch(function (err) {
-                    $("#message").html("Failed to create new object, with error code: " + JSON.stringify(err));
-                })
-        }
-
         function fetchAll() {
             TestClass.order("name", false).fetchAll()
                 .then(function (results) {

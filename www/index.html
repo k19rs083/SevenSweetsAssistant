@@ -15,14 +15,31 @@
 
         // コールバックの登録など
         $(function () {
-            $("#message").html("initialized");
-            $("#btnA").click(function (e) {
-                btnAClick(e);
+            $("#message").html("おいしいスイーツを探そう！<br>値段からサーチする機能が使えます");
+            $("#search").click(function () {
+                search();
             })
             $("#btnB").click(function (e) {
                 btnBClick(e);
             })
         });
+
+        function search() {
+            let searchKey = $("#chooseSweets").val();
+            if(searchKey === "cheaper") {
+                sortCheap();
+            } else if(searchKey === "expensive") {
+                sortExpensive();
+            }
+        }
+
+        function sortCheap() {
+            $("#message").html("安いものから表示します");
+        }
+
+        function sortExpensive() {
+            $("#message").html("高いものから表示します");
+        }
 
         function btnAClick(e) {
             // 登録するレコードを用意
