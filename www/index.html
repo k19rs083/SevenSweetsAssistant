@@ -9,11 +9,9 @@
     <link rel="stylesheet" href="components/loader.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="keys.js"></script>
+    <script src="script.js"></script>
     <script>
-        // NCMB アクセスの準備
-        var ncmb = new NCMB(appKey, clientKey);
-        // 利用するデータベースを指定（存在しなければ生成）
-        var TestClass = ncmb.DataStore("RegisterTest");
+
         // コールバックの登録など
         $(function () {
             $("#message").html("initialized");
