@@ -20,9 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6eced54-6ce0-46ad-bb8f-bcb91993c609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/www/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/configure.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/configure.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +69,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1609744959534</updated>
-      <workItem from="1609744960649" duration="2379000" />
+      <workItem from="1609744960649" duration="4790000" />
     </task>
     <task id="LOCAL-00001" summary="Project's initial commit">
       <created>1609745103882</created>
@@ -93,7 +92,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609746274795</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Separated Script File">
+      <created>1609847481322</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1609847481322</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,7 +120,8 @@
     <MESSAGE value="Project's initial commit" />
     <MESSAGE value="Add Buttons" />
     <MESSAGE value="Modified HTML" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified HTML" />
+    <MESSAGE value="Separated Script File" />
+    <option name="LAST_COMMIT_MESSAGE" value="Separated Script File" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1609746301469">
