@@ -58,3 +58,16 @@ input {
   border-style: solid;
   border-color: grey;
 }
+
+table {
+  border-collapse: collapse;
+}
+
+th, td {
+  border: solid;
+}
+
+/* respected from https://qiita.com/gcyata/items/353658a7bdc1e7395337 */
+td {
+  word-break: break-all;
+}
