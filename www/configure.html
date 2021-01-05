@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="ja">
 <head>
+    <title>Register DB</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="Content-Security-Policy"
@@ -13,25 +14,35 @@
     <script>
         // コールバックの登録など
         $(function () {
-            $("#message").html("initialized");
-            $("#btnA").click(function (e) {
-                btnAClick(e);
+            $("#message").html("このページではスイーツの登録と一覧表示ができます");
+            $("#register").click(function () {
+                register();
             })
-            $("#btnB").click(function (e) {
-                btnBClick(e);
+            $("#fetchAll").click(function () {
+                fetchAll();
             })
         });
 
-        function btnAClick(e) {
+        function register() {
             // 登録するレコードを用意
-            var testClass = new TestClass();
-            var key = $("#field").val();
-            var value = $("#value").val();
+            let testClass = new TestClass();
+            // 名前、URL、プライスをそれぞれ登録したい
+            let sweetsName = $("#sweetsName").val();
+            let sweetsURL = $("#sweetsURL").val();
+            let sweetsPrice = $("#sweetsPrice").val();
             // レコードのフィールドと値を設定
-            testClass.set(key, value);
+            testClass.set("name", sweetsName);
+            testClass.set("url", sweetsURL);
+            testClass.set("price", sweetsPrice);
             // レコードをデータベースに登録
-            testClass.save();
-            $("#message").html("btnA clicked !");
+            testClass.save()
+            .then(function (){
+                $("#message").html("登録成功しました！");
+            })
+            .catch(function (err) {
+                $("#message").html("以下の理由で登録に失敗しました！<br> " + JSON.stringify(err));
+            })
+
         }
 
         function btnBClick(e) {
@@ -50,23 +61,52 @@
                     $("#message").html("Failed to create new object, with error code: " + JSON.stringify(err));
                 })
         }
+
+        function fetchAll() {
+            TestClass.order("name", false).fetchAll()
+                .then(function (results) {
+                    showResults(results);
+                })
+        }
+
+        function showResults(results) {
+            // テーブルのヘッダを生成
+            let msg = "<table><tr><th>品名</th><th>URL</th><th>価格</th></tr>";
+            for (let i = 0; i < results.length; i++) {
+                // 各データを収めた表の列を生成
+                msg += "<tr>";
+                msg += "<td>" + results[i].name + "</td>";
+                msg += "<td class='num'>" + results[i].url + "</td>";
+                msg += "<td class='num'>" + results[i].price + "円</td>";
+                msg += "</tr>";
+            }
+            // テーブルのテイラを生成
+            msg += "</table>";
+            $("#message").html(msg);
+        }
     </script>
 </head>
 <body>
 <h1>Configuration</h1>
 <div>
-    <label for="field">Field:</label>
-    <input id="field" type="text" value="message">
+    <label for="sweetsName" class="label-register">品名:</label>
+    <input id="sweetsName" type="text" value="message">
 </div>
 <div>
-    <label for="value">Value:</label>
-    <input id="value" type="text" value="Hello, mBaaS!">
+    <label for="sweetsURL" class="label-register">URL:</label>
+    <input id="sweetsURL" type="text" value="Hello, mBaaS!">
+</div>
+<div>
+    <label for="sweetsPrice" class="label-register">価格:</label>
+    <input id="sweetsPrice" type="text" value="Hello, mBaaS!">
+</div>
+<div class="center">
+    <button id="register" class="btn">登録</button>
+    <button id="fetchAll" class="btn">一覧表示</button>
 </div>
 <div class="center">
     <button id="btnA" class="btn" onclick=location.href='index.html'>Main</button>
     <button id="btnB" class="btn">Config</button>
-    <button id="btnC" class="btn">Regist 2</button>
-    <button id="btnD" class="btn">Regist 2</button>
 </div>
 <div id="message"></div>
 </body>

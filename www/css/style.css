@@ -14,15 +14,29 @@ h2 {
   color: lightslategray;
 }
 
-label {
+/*label {
+  display: block;
+  float: left;
+  text-align: right;
+  width: 40%;
+}*/
+
+.label-selector {
   display: block;
   float: left;
   text-align: right;
   width: 40%;
 }
 
+.label-register {
+  display: block;
+  float: left;
+  text-align: right;
+  width: 15%;
+}
+
 input {
-  width: 75%;
+  width: 65%;
 }
 
 .center {
