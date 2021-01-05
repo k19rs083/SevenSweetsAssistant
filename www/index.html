@@ -26,10 +26,12 @@
 
         function search() {
             let searchKey = $("#chooseSweets").val();
-            if(searchKey === "cheaper") {
+            if (searchKey === "cheaper") {
                 sortCheap();
-            } else if(searchKey === "expensive") {
+            } else if (searchKey === "expensive") {
                 sortExpensive();
+            } else if (searchKey === "recent") {
+                sortRecent();
             }
         }
 
@@ -41,16 +43,29 @@
             $("#message").html("高いものから表示します");
         }
 
-        function btnAClick(e) {
-            // 登録するレコードを用意
-            var testClass = new TestClass();
-            var key = $("#field").val();
-            var value = $("#value").val();
-            // レコードのフィールドと値を設定
-            testClass.set(key, value);
-            // レコードをデータベースに登録
-            testClass.save();
-            $("#message").html("btnA clicked !");
+        function sortRecent() {
+            $("#message").html("最近のものから表示します");
+            TestClass.order("createDate", true)
+                .fetchAll()
+                .then(function (results) {
+                    // 取得結果の上位10位からランダムで1つを選んで表示
+                    let randomValue = getRandomInt(10);
+                    let object = results[0]; // 本番では書き換える
+                    let showName = object.name;
+                    let showURL = object.url;
+                    let showPrice = object.price;
+                    let msg = "";
+                    msg += "<a href=\"" + showURL + "\">" + showName + "</a><br>" + "税込" + showPrice + "円";
+                    $("#message").html(msg);
+                })
+                .catch(function (err) {
+                    $("#message").html("以下の理由で処理に失敗しました！<br> " + JSON.stringify(err));
+                })
+        }
+
+        // code from https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max));
         }
 
         function btnBClick(e) {
@@ -77,7 +92,7 @@
 <div>
     <label for="chooseSweets" class="label-selector">今日の気分は？</label>
     <select name="example" id="chooseSweets">
-        <option value="newer">新しいものを試したい</option>
+        <option value="recent">新しいものを試したい</option>
         <option value="cheaper">安いものから選びたい</option>
         <option value="expensive">高級なものを試したい</option>
         <option value="lowCalorie">カロリーも気にしたい</option>
