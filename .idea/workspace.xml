@@ -21,8 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d6eced54-6ce0-46ad-bb8f-bcb91993c609" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/configure.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/configure.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +68,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1609744959534</updated>
-      <workItem from="1609744960649" duration="18588000" />
+      <workItem from="1609744960649" duration="19521000" />
     </task>
     <task id="LOCAL-00001" summary="Project's initial commit">
       <created>1609745103882</created>
@@ -134,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609889797277</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Tweaked Configuration Page">
+      <created>1609890856827</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1609890856827</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,13 +167,14 @@
     <MESSAGE value="Implemented Register and Fetch Function" />
     <MESSAGE value="Implemented function to call sort function" />
     <MESSAGE value="Implemented Sweets Pickup Function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented Sweets Pickup Function" />
+    <MESSAGE value="Tweaked Configuration Page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tweaked Configuration Page" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1609889806677">
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1609890858252">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609889806677" />
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609890858252" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1609746301469" />
   </component>
 </project>

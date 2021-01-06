@@ -15,7 +15,7 @@
 
         // コールバックの登録など
         $(function () {
-            $("#message").html("おいしいスイーツを探そう！<br>サーチ機能を鋭意実装中！");
+            $("#message").html("おいしいスイーツを探そう！");
             $("#search").click(function () {
                 search();
             })
@@ -27,30 +27,31 @@
         function search() {
             let searchKey = $("#chooseSweets").val();
             if (searchKey === "cheaper") {
-                sortCheap();
+                $("#message").html("安いものから表示します");
+                sort("price", false);
             } else if (searchKey === "expensive") {
-                sortExpensive();
+                $("#message").html("高いものから表示します");
+                sort("price", true);
             } else if (searchKey === "recent") {
-                sortRecent();
+                $("#message").html("最近のものから表示します");
+                sort("createDate", true);
             }
         }
 
         function sortCheap() {
-            $("#message").html("安いものから表示します");
+
         }
 
         function sortExpensive() {
-            $("#message").html("高いものから表示します");
         }
 
-        function sortRecent() {
-            $("#message").html("最近のものから表示します");
-            TestClass.order("createDate", true)
+        function sort(sortKey, boolValue) {
+            TestClass.order(sortKey, boolValue)
                 .fetchAll()
                 .then(function (results) {
-                    // 取得結果の上位10位からランダムで1つを選んで表示
-                    let randomValue = getRandomInt(10);
-                    let object = results[0]; // 本番では書き換える
+                    // 取得結果の上位n位からランダムで1つを選んで表示
+                    let randomValue = getRandomInt(4);
+                    let object = results[randomValue]; // 本番では書き換える
                     let showName = object.name;
                     let showURL = object.url;
                     let showPrice = object.price;
@@ -69,20 +70,6 @@
         }
 
         function btnBClick(e) {
-            // 登録するレコードを用意
-            var testClass = new TestClass();
-            var key = $("#field").val();
-            var value = $("#value").val();
-            // レコードのフィールドと値を設定
-            testClass.set(key, value);
-            // レコードをデータベースに登録
-            testClass.save()
-                .then(function (m) {
-                    $("#message").html("New object created with objectId: " + testClass.objectId);
-                })
-                .catch(function (err) {
-                    $("#message").html("Failed to create new object, with error code: " + JSON.stringify(err));
-                })
         }
     </script>
 </head>
