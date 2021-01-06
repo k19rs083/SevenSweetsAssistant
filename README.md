@@ -27,11 +27,11 @@
 表示された菓子類のうち、菓子類の名称はハイパーリンクとなっている。
 今回の「イタリア栗の濃厚モンブラン」の例では、セブン-イレブン・ジャパンの[イタリア栗の濃厚モンブランの商品Webページ](https://www.sej.co.jp/products/a/item/113298/)へリンクしている。
 
-![Search Page](https://raw.githubusercontent.com/k19rs083/SevenSweetsAssistant/master/search_page.png)
+![Fig.1: Image of Search Page](https://raw.githubusercontent.com/k19rs083/SevenSweetsAssistant/master/search_page.png)
 
 *図1: 検索ページを表示した様子*
 
-![Search Page](https://raw.githubusercontent.com/k19rs083/SevenSweetsAssistant/master/search_result.png)
+![Fig.2: Image of Search Function](https://raw.githubusercontent.com/k19rs083/SevenSweetsAssistant/master/search_result.png)
 
 *図2: 検索結果を表示した様子*
 
@@ -46,6 +46,32 @@
 
 本ページには、データベース登録機能のほかに、データベースに登録されたデータを一覧表示する機能を備えている。この機能は「一覧表示」ボタンを押下することで利用できる。
 
-![Search Page](https://raw.githubusercontent.com/k19rs083/SevenSweetsAssistant/master/regist_page.png)
+![Fig.3: Image of Database Register Page](https://raw.githubusercontent.com/k19rs083/SevenSweetsAssistant/master/regist_page.png)
 
 *図3: データベース登録ページを表示した様子*
+
+データベース登録ページには、「登録」「一覧表示」以外にも、「Main」「Config」と書かれたボタンがある。
+「Config」ボタンは現在は機能しない。「Main」ボタンは、押下することで、検索ページへ遷移できる。
+
+## 実装できていない機能
+
+もともと実装する予定であったものの、実装に至っていない機能が複数ある。カロリーを検索キーとした検索機能は、当初は実装する予定であったものの、データベースへの登録作業が煩雑化するといった理由から省略した。
+また、商品を食べた回数を記録し、その回数を検索キーとして検索する機能（例えば、過去に食べたことのない商品を優先して表示するなど）を実装予定であったが、これは技量および時間の不足により断念した。
+検索ページに実装されている「これにする」ボタンは、元々は商品を食べた回数を記録するために利用する予定だったものである。
+
+## このプログラムを作成した経緯
+
+このプログラムの着想元は、ちょまど氏が2018年より公開している公開しているこちらの動画である。[[2分30秒動画] HoloLens で セブンスイーツアプリ作ってみた [Microsoft Custom Vision's Object Detection with HoloLens]](https://www.youtube.com/watch?v=y2CLT9LgmOk)
+
+プログラムのテーマおよび名称はこの動画に由来しているが、ソースコードの実装などで参考にしている点はなく、概ね独自の実装となっている。
+このテーマでの制作を決めた理由は、私自身もコンビニの菓子類が好みで、自分へのご褒美として購入することがあるが、種類が多くて選ぶのに迷ってしまう、といった理由がある。
+
+## 参考にしたプログラム
+
+このプログラムそのものは、授業内で提示された「mbaas_regist2020」をベースにして制作されている。
+大部分を改変しているものの、jQueryを使ったイベントリスナーや、データベース登録機能などの実装において参考となっている。
+また、データベース検索機能の実装には、授業内で提示された「mbaas_update2020」を参考としている。
+そのほかに参考したWebサイトは以下の通りである。
+
+* [Math.random() - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Math/random) - ランダムな数字を発生させる関数の実装に利用した。
+* [文字列の折り返しを表現するCSSプロパティ - Qiita](https://qiita.com/gcyata/items/353658a7bdc1e7395337) - HTMLのテーブル内において、長い文字列を折り返す方法を参考にした。
