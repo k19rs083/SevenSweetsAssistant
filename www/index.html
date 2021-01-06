@@ -44,7 +44,7 @@
                 .then(function (results) {
                     // 取得結果の上位n位からランダムで1つを選んで表示
                     let randomValue = getRandomInt(4);
-                    let object = results[randomValue]; // 本番では書き換える
+                    let object = results[randomValue];
                     let showName = object.name;
                     let showURL = object.url;
                     let showPrice = object.price;
