@@ -20,8 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6eced54-6ce0-46ad-bb8f-bcb91993c609" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/searchWindow.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +47,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/www" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -57,6 +58,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\WebstormProjects\SevenSweetsAssistant" />
       <recent name="C:\Users\User\WebstormProjects\SevenSweetsAssistant\www" />
     </key>
   </component>
@@ -68,7 +70,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1609744959534</updated>
-      <workItem from="1609744960649" duration="19521000" />
+      <workItem from="1609744960649" duration="22227000" />
     </task>
     <task id="LOCAL-00001" summary="Project's initial commit">
       <created>1609745103882</created>
@@ -140,7 +142,21 @@
       <option name="project" value="LOCAL" />
       <updated>1609890856827</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Implemented Search Function">
+      <created>1609891677260</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1609891677260</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Upload Image">
+      <created>1609893649295</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1609893649295</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,13 +184,15 @@
     <MESSAGE value="Implemented function to call sort function" />
     <MESSAGE value="Implemented Sweets Pickup Function" />
     <MESSAGE value="Tweaked Configuration Page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tweaked Configuration Page" />
+    <MESSAGE value="Implemented Search Function" />
+    <MESSAGE value="Upload Image" />
+    <option name="LAST_COMMIT_MESSAGE" value="Upload Image" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1609890858252">
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1609893650485">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609890858252" />
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609893650485" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1609746301469" />
   </component>
 </project>
